@@ -80,32 +80,34 @@ subsetByPersonIdAndDate <- function(cdmTable, cohortId, cohortTable, cdmDatabase
   
   # DatabaseConnector::executeSql(connection=DatabaseConnector::connect(connectionDetails),
   #                               sql=translatedSql)
-  print(translatedSql)
+  # print(translatedSql)
+  DatabaseConnector::executeSql(connection = con, sql = translatedSql)
+  
 }
 
 
-subsetCDM <- function(cohortId, cohortTable, cdmDatabaseSchema, 
+subsetCDM <- function(cohortId, cohortTable, cdmDatabaseSchema,
                       resultDatabaseSchema, connectionDetails) {
-  
+
   "
   Subset the CDM based on a cohort from ATLAS
   "
-  
+
   # Subset by person_id
   personIdTables <- getPersonIdTables()
-  apply(personIdTables, 1, subsetByPersonId,  
+  apply(personIdTables, 1, subsetByPersonId,
         cohortId=cohortId,
-        cohortTable=cohortTable, 
-        cdmDatabaseSchema=cdmDatabaseSchema, 
-        resultDatabaseSchema=resultDatabaseSchema, 
+        cohortTable=cohortTable,
+        cdmDatabaseSchema=cdmDatabaseSchema,
+        resultDatabaseSchema=resultDatabaseSchema,
         connectionDetails=connectionDetails)
-  
+
   # Subset by person_id and dates
   dateTables <- getDateTables()
-  apply(dateTables, 1, subsetByPersonIdAndDate,  
+  apply(dateTables, 1, subsetByPersonIdAndDate,
         cohortId=cohortId,
-        cohortTable=cohortTable, 
-        cdmDatabaseSchema=cdmDatabaseSchema, 
-        resultDatabaseSchema=resultDatabaseSchema, 
+        cohortTable=cohortTable,
+        cdmDatabaseSchema=cdmDatabaseSchema,
+        resultDatabaseSchema=resultDatabaseSchema,
         connectionDetails=connectionDetails)
 }
