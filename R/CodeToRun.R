@@ -1,5 +1,4 @@
-# TODO: Write code to iterate over the dataframe of retrieved notes to write each individual file
-# likely I could use apply
+
 
 working_directory <- "/workdir/workdir"
 setwd(working_directory)
@@ -8,14 +7,17 @@ renv_package_version <- '0.13.2'
 renv_vesion <- "v5"
 r_version <- "R-4.0"
 linux_version <- "x86_64-pc-linux-gnu"
+
+
 jsonPath <- "/workdir/gcloud/application_default_credentials.json"
-bqDriverPath <- "/workdir/workdir/bq_jdbc"
-project_id <- "allennlp"
-dataset_id <- "jposada_explore"
-cdm_database_schema <- "`bigquery-public-data.cms_synthetic_patient_data_omop`"
+bqDriverPath <- "/workdir/workdir/BQDriver/"
+project_id <- "som-nero-nigam-starr"
+dataset_id <- "prone_nlp"
+
+cdm_database_schema <- "som-rit-phi-starr-prod.starr_omop_cdm5_deid_latest"
 vocabulary_database_schema <- cdm_database_schema
-target_database_schema <- "`allennlp.jposada_explore`"
-target_cohort_table <- "cohort"
+target_database_schema <- "`som-nero-nigam-starr.prone_nlp`"
+target_cohort_table <- "may19_2022_cohort"
 target_cohort_id <- "141"
 notes_folder ="/workdir/workdir/ProneNotes/"
 nlp_admission_summary <- "nlp_admission_summary"
