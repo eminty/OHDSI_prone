@@ -1,0 +1,28 @@
+DBMS:
+bigquery
+
+Error:
+java.sql.SQLException: [Simba][BigQueryJDBCDriver](100032) Error executing query job. Message: Not found: Table som-nero-nigam-starr:prone_nlp.NA
+
+SQL:
+drop table `som-nero-nigam-starr.prone_nlp`.NA
+
+R version:
+R version 4.0.5 (2021-03-31)
+
+Platform:
+x86_64-pc-linux-gnu
+
+Attached base packages:
+- stats
+- graphics
+- grDevices
+- utils
+- datasets
+- methods
+- base
+
+Other attached packages:
+- stringr (1.4.0)
+- dplyr (1.0.6)
+- magrittr (2.0.1)
